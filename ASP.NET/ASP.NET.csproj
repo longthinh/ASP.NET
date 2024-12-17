@@ -131,6 +131,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -301,7 +302,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
-    <Content Include="Views\User\Register.cshtml" />
     <Content Include="Views\Category\ProductByCategory.cshtml" />
     <Content Include="Views\Category\AllCategory.cshtml" />
     <Content Include="Views\Product\ProductDetail.cshtml" />
@@ -310,6 +310,7 @@
     <Content Include="Views\Category\GridCategory.cshtml" />
     <Content Include="Views\About\About.cshtml" />
     <Content Include="Views\Contact\Contact.cshtml" />
+    <Content Include="Views\User\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
