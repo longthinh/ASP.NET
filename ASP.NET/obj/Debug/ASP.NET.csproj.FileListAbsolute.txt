@@ -235,3 +235,7 @@ D:\Laptop\Desktop\Student\N3 - HK1\ASP.NET\Remote\ASP.NET\ASP.NET\obj\Debug\ASP.
 D:\Laptop\Desktop\Student\N3 - HK1\ASP.NET\Remote\ASP.NET\ASP.NET\obj\Debug\ASP.NET.csproj.CopyComplete
 D:\Laptop\Desktop\Student\N3 - HK1\ASP.NET\Remote\ASP.NET\ASP.NET\obj\Debug\ASP.NET.dll
 D:\Laptop\Desktop\Student\N3 - HK1\ASP.NET\Remote\ASP.NET\ASP.NET\obj\Debug\ASP.NET.pdb
+D:\Laptop\Desktop\Student\N3 - HK1\ASP.NET\ASP.NET\ASP.NET\bin\EntityFramework.dll
+D:\Laptop\Desktop\Student\N3 - HK1\ASP.NET\ASP.NET\ASP.NET\bin\EntityFramework.SqlServer.dll
+D:\Laptop\Desktop\Student\N3 - HK1\ASP.NET\ASP.NET\ASP.NET\bin\EntityFramework.xml
+D:\Laptop\Desktop\Student\N3 - HK1\ASP.NET\ASP.NET\ASP.NET\bin\EntityFramework.SqlServer.xml
