@@ -1,0 +1,63 @@
+﻿@model ChuyenDeASPNET.Context.User
+
+
+@{
+    ViewBag.Title = "Register";
+}
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <center>
+        <div class="form-group col-4">
+            @Html.LabelFor(model => model.FirstName, "Tên", htmlAttributes: new { @class = "control-label" })
+            <div>
+                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group col-4">
+            @Html.LabelFor(model => model.LastName, "Họ và tên đệm", htmlAttributes: new { @class = "control-label" })
+            <div>
+                @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group col-4">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label" })
+            <div>
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group col-4">
+            @Html.LabelFor(model => model.Password, "Mật khẩu", htmlAttributes: new { @class = "control-label" })
+            <div>
+                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </center>
+
+
+    <div class="form-group">
+        <div class="form-group" align="center">
+            <input type="submit" name="submit" class="btn btn-primary" value="Create" />
+        </div>
+
+    </div>
+</div>
+}
+
+<p class="text-center mt-4">Đã có tài khoản? <a href="@Url.Action("Login", "Home")">Đăng nhập</a></p>    
