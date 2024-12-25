@@ -2112,8 +2112,11 @@
     <Content Include="Content\images\banners\banner8.jpg" />
     <Content Include="Content\images\banners\banner9.jpg" />
     <Content Include="Content\images\banners\slide1.jpg" />
+    <Content Include="Content\images\banners\slide1.png" />
     <Content Include="Content\images\banners\slide2.jpg" />
+    <Content Include="Content\images\banners\slide2.png" />
     <Content Include="Content\images\banners\slide3.jpg" />
+    <Content Include="Content\images\banners\slide3.png" />
     <Content Include="Content\images\favicon.ico" />
     <Content Include="Content\images\icons\flags\AU%402x.png" />
     <Content Include="Content\images\icons\flags\AU.png" />
@@ -2201,7 +2204,6 @@
     <Content Include="Content\css\responsive.css.map" />
     <Content Include="Content\css\ui.css.map" />
     <Content Include="Content\images\.DS_Store" />
-    <Content Include="Content\images\banners\.DS_Store" />
     <Content Include="Content\images\icons\.DS_Store" />
     <Content Include="Content\images\items\.DS_Store" />
     <Content Include="Content\images\posts\.DS_Store" />
