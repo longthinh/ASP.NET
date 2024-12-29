@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title Alistyle</title>
-    <link href="~/Content/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="~/Content/~/Content/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
 
 
     <!-- jQuery -->
@@ -48,7 +48,7 @@
                                     <option value="comments">Tốt nhất</option>
                                     <option value="content">Mới nhất</option>
                                 </select>
-                                <input type="text" class="form-control" placeholder="Nhập từ khóa cần tìm kiếm">
+                                <input type="text" class="form-control" placeholder="Nhập tên sản phẩm">
 
                                 <div class="input-group-append">
                                     <button class="btn btn-primary" type="submit">
@@ -61,14 +61,34 @@
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="widgets-wrap float-md-right">
                             <div class="widget-header mr-3">
-                                <a href= "@Url.Action("Login", "Home")" class="widget-view">
-                                    <div class="icon-area">
-                                        <i class="fa fa-user"></i>
-                                        <span class="notify">3</span>
+                                @if (Session["idUser"] != null)
+                                {
+                                    <!-- Hiển thị các liên kết cho người dùng đã đăng nhập -->
+                                    <ul style="list-style-type: none; padding-left: 0;">
+                                        <li>
+                                            <a href="~/Home/Logout" class="btn btn-warning">
+                                                <i class="fa fa-sign-out"></i> Đăng xuất
+                                            </a>
+                                        </li>
+                                    </ul>
+                                }
+                                else
+                                {
+                                    <!-- Hiển thị biểu tượng tài khoản cho người dùng chưa đăng nhập -->
+                                    <div>
+                                        <a href="~/Home/Register" class="btn btn-outline-primary">
+                                            <i class="fa fa-user-plus"></i> Đăng ký
+                                        </a>
+                                        <a href="~/Home/Login" class="btn btn-outline-success">
+                                            <i class="fa fa-sign-in"></i> Đăng nhập
+                                        </a>
                                     </div>
-                                    <small class="text">Cá nhân</small>
-                                </a>
+                                }
                             </div>
+
+
+
+
                             <div class="widget-header mr-3">
                                 <a href="#" class="widget-view">
                                     <div class="icon-area">
@@ -83,17 +103,22 @@
                                     <div class="icon-area">
                                         <i class="fa fa-store"></i>
                                     </div>
-                                    <small class="text">Đặt hàng</small>
+                                    <small class="text">Shop</small>
                                 </a>
                             </div>
                             <div class="widget-header">
                                 <a href="@Url.Action("Cart", "Shopping")" class="widget-view">
                                     <div class="icon-area">
                                         <i class="fa fa-shopping-cart"></i>
+                                        @if (Session["count"] != null && Convert.ToInt32(Session["count"]) > 0)
+                                        {
+                                            <span class="notify" id="CartCount">@Session["count"]</span>
+                                        }
                                     </div>
                                     <small class="text">Giỏ hàng</small>
                                 </a>
                             </div>
+
                         </div> <!-- widgets-wrap.// -->
                     </div> <!-- col.// -->
                 </div> <!-- row.// -->
@@ -111,22 +136,18 @@
                 <div class="collapse navbar-collapse" id="main_nav">
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"> <i class="fa fa-bars text-muted mr-2"></i>Danh mục</a>
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"> <i class="fa fa-bars text-muted mr-2"></i> Danh mục </a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Apple</a>
-                                <a class="dropdown-item" href="#">Samsung</a>
-                                <a class="dropdown-item" href="#">Xiaomi</a>
-                                <a class="dropdown-item" href="#">Huawei</a>
+                                <a class="dropdown-item" href="#">iPhone</a>
                                 <a class="dropdown-item" href="#">Laptop</a>
                                 <a class="dropdown-item" href="#">Phụ kiện</a>
+                                
                             </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Vận chuyển</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Thương mại</a>
-                        </li>
+                        
                         <li class="nav-item">
                             <a class="nav-link" href="#">Dịch vụ</a>
                         </li>
@@ -137,15 +158,15 @@
                     </ul>
                     <ul class="navbar-nav ml-md-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Tải ứng dụng</a>
+                            <a class="nav-link" href="#">Get the app</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="http://example.com" data-toggle="dropdown">English</a>
+                            <a class="nav-link dropdown-toggle" href="http://example.com" data-toggle="dropdown">Tiếng Việt</a>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="#">Russian</a>
-                                <a class="dropdown-item" href="#">French</a>
-                                <a class="dropdown-item" href="#">Spanish</a>
-                                <a class="dropdown-item" href="#">Chinese</a>
+                                <a class="dropdown-item" href="#">Tiếng Anh</a>
+                                <a class="dropdown-item" href="#">Tiếng Pháp</a>
+                                <a class="dropdown-item" href="#">Tiếng Trung</a>
+                                
                             </div>
                         </li>
                     </ul>
@@ -173,10 +194,10 @@
                         </ul>
                     </aside>
                     <aside class="col-md col-6">
-                        <h6 class="title">Công ty</h6>
+                        <h6 class="title">Chung</h6>
                         <ul class="list-unstyled">
                             <li> <a href="#">Về chúng tôi</a></li>
-                            <li> <a href="#">Quảng cáo</a></li>
+                            <li> <a href="#">Đối tác</a></li>
                             <li> <a href="#">Tìm cửa hàng</a></li>
                             <li> <a href="#">Điều khoản</a></li>
                             <li> <a href="#">Sitemap</a></li>
@@ -187,22 +208,22 @@
                         <ul class="list-unstyled">
                             <li> <a href="#">Liên hệ</a></li>
                             <li> <a href="#">Hoàn tiền</a></li>
-                            <li> <a href="#">Tình trạng đặt hàng</a></li>
-                            <li> <a href="#">Thông tin gửi hàng</a></li>
+                            <li> <a href="#">Trạng thái</a></li>
+                            <li> <a href="#">Thông tin</a></li>
                             <li> <a href="#">Thời gian làm việc</a></li>
                         </ul>
                     </aside>
                     <aside class="col-md col-6">
                         <h6 class="title">Tài khoản</h6>
                         <ul class="list-unstyled">
-                            <li> <a href="@Url.Action("Login", "Home")">Đăng nhập</a></li>
-                            <li> <a href="@Url.Action("Register", "Home")">Đăng ký</a></li>
-                            <li> <a href="#">Cài đặt tài khoản</a></li>
-                            <li> <a href="#">Đặt hàng của tôi</a></li>
+                            <li> <a href="@Url.Action("Login", "Home")"> Đăng nhập </a></li>
+                            <li> <a href="@Url.Action("Register", "Home")"> Đăng ký </a></li>
+                            <li> <a href="#"> Cài đặt </a></li>
+                            <li> <a href="#"> Đặt hàng của tôi </a></li>
                         </ul>
                     </aside>
                     <aside class="col-md">
-                        <h6 class="title">Mạng xã hội</h6>
+                        <h6 class="title">Kênh</h6>
                         <ul class="list-unstyled">
                             <li><a href="#"> <i class="fab fa-facebook"></i> Facebook </a></li>
                             <li><a href="#"> <i class="fab fa-twitter"></i> Twitter </a></li>
@@ -216,7 +237,7 @@
             <section class="footer-bottom text-center">
 
                 <p class="text-white">Chính sách bảo mật - Điều khoản sử dụng - Thông tin người dùng Hướng dẫn yêu cầu pháp lý</p>
-                <p class="text-muted"> &copy 2019 Tên công ty | Mọi quyền được bảo lưu</p>
+                <p class="text-muted"> &copy 2019 Alistyle, Mọi quyền được bảo lưu </p>
                 <br>
             </section>
         </div><!-- //container -->

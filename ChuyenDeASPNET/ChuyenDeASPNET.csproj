@@ -131,6 +131,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Context\Brand.cs">
       <DependentUpon>dbModel.tt</DependentUpon>
     </Compile>
@@ -152,6 +153,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dbModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Context\Order.cs">
+      <DependentUpon>dbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\OrderDetail.cs">
+      <DependentUpon>dbModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Context\Product.cs">
       <DependentUpon>dbModel.tt</DependentUpon>
     </Compile>
@@ -161,6 +168,7 @@
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PagesController.cs" />
+    <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\ShoppingController.cs" />
@@ -168,6 +176,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CartModel.cs" />
     <Compile Include="Models\HomeModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -2112,11 +2121,8 @@
     <Content Include="Content\images\banners\banner8.jpg" />
     <Content Include="Content\images\banners\banner9.jpg" />
     <Content Include="Content\images\banners\slide1.jpg" />
-    <Content Include="Content\images\banners\slide1.png" />
     <Content Include="Content\images\banners\slide2.jpg" />
-    <Content Include="Content\images\banners\slide2.png" />
     <Content Include="Content\images\banners\slide3.jpg" />
-    <Content Include="Content\images\banners\slide3.png" />
     <Content Include="Content\images\favicon.ico" />
     <Content Include="Content\images\icons\flags\AU%402x.png" />
     <Content Include="Content\images\icons\flags\AU.png" />
@@ -2141,6 +2147,111 @@
     <Content Include="Content\images\icons\pay-mastercard.png" />
     <Content Include="Content\images\icons\pay-visa-el.png" />
     <Content Include="Content\images\icons\pay-visa.png" />
+    <Content Include="Content\images\images\avatars\avatar1.jpg" />
+    <Content Include="Content\images\images\avatars\avatar2.jpg" />
+    <Content Include="Content\images\images\avatars\avatar3.jpg" />
+    <Content Include="Content\images\images\banners\ad-sm.png" />
+    <Content Include="Content\images\images\banners\ad.png" />
+    <Content Include="Content\images\images\banners\banner-item1.jpg" />
+    <Content Include="Content\images\images\banners\banner-item2.jpg" />
+    <Content Include="Content\images\images\banners\banner-item3.jpg" />
+    <Content Include="Content\images\images\banners\banner1.jpg" />
+    <Content Include="Content\images\images\banners\banner2.jpg" />
+    <Content Include="Content\images\images\banners\banner3.jpg" />
+    <Content Include="Content\images\images\banners\banner4.jpg" />
+    <Content Include="Content\images\images\banners\banner5.jpg" />
+    <Content Include="Content\images\images\banners\banner6.jpg" />
+    <Content Include="Content\images\images\banners\banner7.jpg" />
+    <Content Include="Content\images\images\banners\banner8.jpg" />
+    <Content Include="Content\images\images\banners\banner9.jpg" />
+    <Content Include="Content\images\images\banners\slide1.jpg" />
+    <Content Include="Content\images\images\banners\slide1.png" />
+    <Content Include="Content\images\images\banners\slide2.jpg" />
+    <Content Include="Content\images\images\banners\slide2.png" />
+    <Content Include="Content\images\images\banners\slide3.jpg" />
+    <Content Include="Content\images\images\banners\slide3.png" />
+    <Content Include="Content\images\images\bong-tai-vang-vang-14k-thiet-ke-don-gian-dinh-da-cz-cao-cap-lap-lanh-btam121-huy-thanh-jewelry.jpg" />
+    <Content Include="Content\images\images\favicon.ico" />
+    <Content Include="Content\images\images\icons\flags\AU%402x.png" />
+    <Content Include="Content\images\images\icons\flags\AU.png" />
+    <Content Include="Content\images\images\icons\flags\CN%402x.png" />
+    <Content Include="Content\images\images\icons\flags\CN.png" />
+    <Content Include="Content\images\images\icons\flags\DE%402x.png" />
+    <Content Include="Content\images\images\icons\flags\DE.png" />
+    <Content Include="Content\images\images\icons\flags\GB%402x.png" />
+    <Content Include="Content\images\images\icons\flags\GB.png" />
+    <Content Include="Content\images\images\icons\flags\IN%402x.png" />
+    <Content Include="Content\images\images\icons\flags\IN.png" />
+    <Content Include="Content\images\images\icons\flags\RU%402x.png" />
+    <Content Include="Content\images\images\icons\flags\RU.png" />
+    <Content Include="Content\images\images\icons\flags\TR%402x.png" />
+    <Content Include="Content\images\images\icons\flags\TR.png" />
+    <Content Include="Content\images\images\icons\flags\US%402x.png" />
+    <Content Include="Content\images\images\icons\flags\US.png" />
+    <Content Include="Content\images\images\icons\flags\UZ%402x.png" />
+    <Content Include="Content\images\images\icons\flags\UZ.png" />
+    <Content Include="Content\images\images\icons\pay-american-ex.png" />
+    <Content Include="Content\images\images\icons\pay-bank.png" />
+    <Content Include="Content\images\images\icons\pay-mastercard.png" />
+    <Content Include="Content\images\images\icons\pay-visa-el.png" />
+    <Content Include="Content\images\images\icons\pay-visa.png" />
+    <Content Include="Content\images\images\items\1.jpg" />
+    <Content Include="Content\images\images\items\10.jpg" />
+    <Content Include="Content\images\images\items\11.jpg" />
+    <Content Include="Content\images\images\items\11.png" />
+    <Content Include="Content\images\images\items\12.jpg" />
+    <Content Include="Content\images\images\items\12.png" />
+    <Content Include="Content\images\images\items\13.jpg" />
+    <Content Include="Content\images\images\items\14.jpg" />
+    <Content Include="Content\images\images\items\15-1.jpg" />
+    <Content Include="Content\images\images\items\15-2.jpg" />
+    <Content Include="Content\images\images\items\15.jpg" />
+    <Content Include="Content\images\images\items\15.png" />
+    <Content Include="Content\images\images\items\16.jpg" />
+    <Content Include="Content\images\images\items\16.png" />
+    <Content Include="Content\images\images\items\17.jpg" />
+    <Content Include="Content\images\images\items\18.jpg" />
+    <Content Include="Content\images\images\items\19.jpg" />
+    <Content Include="Content\images\images\items\2.jpg" />
+    <Content Include="Content\images\images\items\2.png" />
+    <Content Include="Content\images\images\items\20.jpg" />
+    <Content Include="Content\images\images\items\21.jpg" />
+    <Content Include="Content\images\images\items\22.jpg" />
+    <Content Include="Content\images\images\items\23.jpg" />
+    <Content Include="Content\images\images\items\24.jpg" />
+    <Content Include="Content\images\images\items\25.jpg" />
+    <Content Include="Content\images\images\items\26.jpg" />
+    <Content Include="Content\images\images\items\27.jpg" />
+    <Content Include="Content\images\images\items\28.jpg" />
+    <Content Include="Content\images\images\items\29.jpg" />
+    <Content Include="Content\images\images\items\3.jpg" />
+    <Content Include="Content\images\images\items\3.png" />
+    <Content Include="Content\images\images\items\31.jpg" />
+    <Content Include="Content\images\images\items\32.jpg" />
+    <Content Include="Content\images\images\items\33.jpg" />
+    <Content Include="Content\images\images\items\4.jpg" />
+    <Content Include="Content\images\images\items\4.png" />
+    <Content Include="Content\images\images\items\5.jpg" />
+    <Content Include="Content\images\images\items\6.jpg" />
+    <Content Include="Content\images\images\items\7.jpg" />
+    <Content Include="Content\images\images\items\8.jpg" />
+    <Content Include="Content\images\images\items\9.jpg" />
+    <Content Include="Content\images\images\items\g1.jpg" />
+    <Content Include="Content\images\images\items\laptop.png" />
+    <Content Include="Content\images\images\items\mac.png" />
+    <Content Include="Content\images\images\items\samsung23.png" />
+    <Content Include="Content\images\images\items\watch.png" />
+    <Content Include="Content\images\images\items\x.png" />
+    <Content Include="Content\images\images\logo-white.png" />
+    <Content Include="Content\images\images\logo.png" />
+    <Content Include="Content\images\images\logo.svg" />
+    <Content Include="Content\images\images\misc\appstore.png" />
+    <Content Include="Content\images\images\misc\payments.png" />
+    <Content Include="Content\images\images\misc\playmarket.png" />
+    <Content Include="Content\images\images\posts\1.jpg" />
+    <Content Include="Content\images\images\posts\2.jpg" />
+    <Content Include="Content\images\images\posts\3.jpg" />
+    <Content Include="Content\images\images\posts\4.jpg" />
     <Content Include="Content\images\items\1.jpg" />
     <Content Include="Content\images\items\10.jpg" />
     <Content Include="Content\images\items\11.jpg" />
@@ -2151,25 +2262,13 @@
     <Content Include="Content\images\items\15-2.jpg" />
     <Content Include="Content\images\items\15.jpg" />
     <Content Include="Content\images\items\2.jpg" />
-    <Content Include="Content\images\items\2.png" />
     <Content Include="Content\images\items\3.jpg" />
-    <Content Include="Content\images\items\3.png" />
     <Content Include="Content\images\items\4.jpg" />
-    <Content Include="Content\images\items\4.png" />
     <Content Include="Content\images\items\5.jpg" />
     <Content Include="Content\images\items\6.jpg" />
     <Content Include="Content\images\items\7.jpg" />
     <Content Include="Content\images\items\8.jpg" />
     <Content Include="Content\images\items\9.jpg" />
-    <Content Include="Content\images\items\ip14.png" />
-    <Content Include="Content\images\items\ip15.png" />
-    <Content Include="Content\images\items\iphone15pro.png" />
-    <Content Include="Content\images\items\laptop.png" />
-    <Content Include="Content\images\items\mac.png" />
-    <Content Include="Content\images\items\phone.png" />
-    <Content Include="Content\images\items\samsung23.png" />
-    <Content Include="Content\images\items\watch.png" />
-    <Content Include="Content\images\items\xiaomi.png" />
     <Content Include="Content\images\logo-white.png" />
     <Content Include="Content\images\logo.png" />
     <Content Include="Content\images\logo.svg" />
@@ -2204,6 +2303,7 @@
     <Content Include="Content\css\responsive.css.map" />
     <Content Include="Content\css\ui.css.map" />
     <Content Include="Content\images\.DS_Store" />
+    <Content Include="Content\images\banners\.DS_Store" />
     <Content Include="Content\images\icons\.DS_Store" />
     <Content Include="Content\images\items\.DS_Store" />
     <Content Include="Content\images\posts\.DS_Store" />
@@ -2313,6 +2413,18 @@
     <Content Include="Context\dbModel.edmx.diagram">
       <DependentUpon>dbModel.edmx</DependentUpon>
     </Content>
+    <Content Include="Areas\Admin\Views\Product\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Details.cshtml" />
+    <Content Include="Content\images\images\.DS_Store" />
+    <Content Include="Content\images\images\banners\.DS_Store" />
+    <Content Include="Content\images\images\icons\.DS_Store" />
+    <Content Include="Content\images\images\items\.DS_Store" />
+    <Content Include="Content\images\images\items\24.webp" />
+    <Content Include="Content\images\images\items\29.webp" />
+    <Content Include="Content\images\images\posts\.DS_Store" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2352,6 +2464,8 @@
     <Content Include="Views\Pages\Payment.cshtml" />
     <Content Include="Views\Home\Register.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Shopping\AddtoCart.cshtml" />
+    <Content Include="Views\Payment\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
