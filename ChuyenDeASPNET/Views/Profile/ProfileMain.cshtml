@@ -131,9 +131,13 @@
                                 <figure class="itemside  mb-3">
                                     <div class="aside"><img src="~/Content/images/items/@product.ProductImage" class="border img-sm"></div>
                                     <figcaption class="info">
-                                        <time class="text-muted"><i class="fa"></i>@product.Price đ</time>
+                                        <time class="text-muted">
+                                            <i class="fa"></i>
+                                            <strong>@String.Format("{0:N0}", product.Price) đ</strong>
+                                        </time>
+
                                         <p>@product.FullDescription</p>
-                                        <span class="text-success">Giao hàng thành công</span>
+                                        <span class="text-success">Đã nhận hàng</span>
                                     </figcaption>
                                 </figure>
                             </div> <!-- col.// --> }

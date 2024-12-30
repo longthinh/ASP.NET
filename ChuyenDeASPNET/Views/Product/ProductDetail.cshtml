@@ -54,12 +54,7 @@
                         <div class="img-big-wrap">
                             <div> <a href="#"><img src="~/Content/images/items/@Model.ProductImage"></a></div>
                         </div> <!-- slider-product.// -->
-                        <div class="thumbs-wrap">
-                            <a href="#" class="item-thumb"> <img src="~/Content/images/items/@Model.ProductImage"></a>
-                            <a href="#" class="item-thumb"> <img src="~/Content/images/items/@Model.ProductImage"></a>
-                            <a href="#" class="item-thumb"> <img src="~/Content/images/items/@Model.ProductImage"></a>
-                            <a href="#" class="item-thumb"> <img src="~/Content/images/items/@Model.ProductImage"></a>
-                        </div> <!-- slider-nav.// -->
+                        
                     </article> <!-- gallery-wrap .end// -->
                 </div> <!-- card.// -->
             </aside>
@@ -83,8 +78,9 @@
                         <small class="label-rating text-success"> <i class="fa fa-clipboard-check"></i> 154 Đã mua</small>
                     </div> <!-- rating-wrap.// -->
                     <div class="mb-3">
-                        <var class="price h4">@Model.Price</var>
-                        
+                        <var class="price h4">@String.Format("{0:N0}", Model.Price)</var>
+
+
                     </div> <!-- price-detail-wrap .// -->
                     <p>
                         @Model.ShortDescription
@@ -155,20 +151,7 @@
                             <p class="mb-2">@Model.FullDescription</p>
                         </div>
                     </article>
-                    @*<article class="media mb-3">
-                        <a href="#"><img class="img-sm mr-3" src="~/Content/images/posts/2.jpg"></a>
-                        <div class="media-body">
-                            <h6 class="mt-0"><a href="#">New tips and tricks</a></h6>
-                            <p class="mb-2"> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin </p>
-                        </div>
-                    </article>
-                    <article class="media mb-3">
-                        <a href="#"><img class="img-sm mr-3" src="~/Content/images/posts/1.jpg"></a>
-                        <div class="media-body">
-                            <h6 class="mt-0"><a href="#">New tips and tricks</a></h6>
-                            <p class="mb-2"> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin </p>
-                        </div>
-                    </article>*@
+                    
 
 
                 </div> <!-- box.// -->

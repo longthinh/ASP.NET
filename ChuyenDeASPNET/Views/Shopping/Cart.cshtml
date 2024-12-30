@@ -62,11 +62,12 @@
                                                 </figure>
                                             </td>
                                             <td>
-                                                <input type="text" value="@item.Quantity" />
+                                                <input type="text" size="2" value="@item.Quantity" />
                                             </td>
                                             <td>
                                                 <div class="price-wrap">
-                                                    <var class="price">@item.Product.Price</var>
+                                                    <var class="price">@String.Format("{0:N0}", item.Product.Price)</var>
+
                                                 </div> <!-- price-wrap .// -->
                                             </td>
                                             <td class="text-right">
@@ -126,20 +127,19 @@
 
                                     <dl class="dlist-align">
                                         <dt>Giá bán:</dt>
-                                        <dd class="text-right">@item.Product.Price</dd>
+                                        <dd class="text-right">@String.Format("{0:N0}", item.Product.Price) đ</dd>
+
                                     </dl>
                                     <dl class="dlist-align">
                                         <dt>Giảm giá:</dt>
-                                        <dd class="text-right">@item.Product.Price</dd>
+                                        <dd class="text-right">0đ</dd>
                                     </dl>
                                     <dl class="dlist-align">
                                         <dt>Tổng:</dt>
-                                        <dd class="text-right  h5"><strong>@item.Product.Price</strong></dd>
+                                        <dd class="text-right"><strong>@String.Format("{0:N0}", item.Product.Price) đ</strong></dd>
+
                                     </dl>
-                                    <hr>
-                                    <p class="text-center mb-3">
-                                        <img src="~/Content/images/items/@item.Product.ProductImage" height="26">
-                                    </p>
+                                    
 
                                 </div> <!-- card-body.// -->
                             }
@@ -160,33 +160,11 @@
                                     <dt>Tổng:</dt>
                                     <dd class="text-right  h5"><strong>0đ</strong></dd>
                                 </dl>
-                                <hr>
-                                <p class="text-center mb-3">
-                                    <img src="~/Content/images/items/14.png" height="26">
-                                </p>
+                                
 
                             </div> <!-- card-body.// -->
                         }
-                        <!--<div class="card-body">
-
-                            <dl class="dlist-align">
-                                <dt>Giá bán:</dt>
-                                <dd class="text-right">0đ</dd>
-                            </dl>
-                            <dl class="dlist-align">
-                                <dt>Giảm giá:</dt>
-                                <dd class="text-right">0đ</dd>
-                            </dl>
-                            <dl class="dlist-align">
-                                <dt>Tổng:</dt>
-                                <dd class="text-right  h5"><strong>0đ</strong></dd>
-                            </dl>
-                            <hr>
-                            <p class="text-center mb-3">
-                                <img src="~/Content/images/items/14.png" height="26">
-                            </p>
-
-                        </div>--> <!-- card-body.// -->
+                        
                     </div>  <!-- card .// -->
                 </aside> <!-- col.// -->
             </div>
