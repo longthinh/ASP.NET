@@ -2,7 +2,7 @@
 
 
 @{
-    ViewBag.Title = "Register";
+    ViewBag.Title = "Đăng ký - ";
 }
 
 
@@ -26,7 +26,7 @@
         </div>
 
         <div class="form-group col-4">
-            @Html.LabelFor(model => model.LastName, "Họ và tên đệm", htmlAttributes: new { @class = "control-label" })
+            @Html.LabelFor(model => model.LastName, "Tên đệm", htmlAttributes: new { @class = "control-label" })
             <div>
                 @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })

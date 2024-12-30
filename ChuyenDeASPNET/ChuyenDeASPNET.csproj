@@ -2124,6 +2124,7 @@
     <Content Include="Content\images\banners\slide2.jpg" />
     <Content Include="Content\images\banners\slide3.jpg" />
     <Content Include="Content\images\favicon.ico" />
+    <Content Include="Content\images\ico.png" />
     <Content Include="Content\images\icons\flags\AU%402x.png" />
     <Content Include="Content\images\icons\flags\AU.png" />
     <Content Include="Content\images\icons\flags\CN%402x.png" />

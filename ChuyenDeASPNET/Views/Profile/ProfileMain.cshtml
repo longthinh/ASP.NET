@@ -1,4 +1,10 @@
-﻿<!DOCTYPE HTML>
+﻿@model ChuyenDeASPNET.Models.HomeModel
+
+@{ var products = Model.ListProduct;
+                var categories = Model.ListCategory; 
+    }
+
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -50,13 +56,10 @@
             <div class="row">
                 <aside class="col-md-3">
                     <nav class="list-group">
-                        <a class="list-group-item active" href="@Url.Action("ProfileMain", "Profile")"> Account overview  </a>
-                        <a class="list-group-item" href="@Url.Action("Address", "Profile")"> My Address </a>
-                        <a class="list-group-item" href="@Url.Action("Order", "Profile")"> My Orders </a>
-                        <a class="list-group-item" href="@Url.Action("Wishlist", "Profile")"> My wishlist </a>
-                        <a class="list-group-item" href="@Url.Action("Seller", "Profile")"> My Selling Items </a>
-                        <a class="list-group-item" href="@Url.Action("Setting", "Profile")"> Settings </a>
-                        <a class="list-group-item" href="@Url.Action("Login", "User")"> Log out </a>
+                        <a class="list-group-item active" href="@Url.Action("ProfileMain", "Profile")">HỒ SƠ</a>
+                        <a class="list-group-item" href="@Url.Action("Address", "Profile")">Địa chỉ</a>
+                        <a class="list-group-item" href="@Url.Action("Order", "Profile")">Đơn hàng</a>
+                        <a class="list-group-item" href="@Url.Action("Login", "User")">ĐĂNG XUẤT</a>
                     </nav>
                 </aside> <!-- col.// -->
                 <main class="col-md-9">
@@ -66,20 +69,20 @@
 
                             <figure class="icontext">
                                 <div class="icon">
-                                    <img class="rounded-circle img-sm border" src="~/Content/images/avatars/avatar3.jpg">
+                                    <img class="rounded-circle img-sm border" src="~/Content/images/avatars/thinh.png">
                                 </div>
                                 <div class="text">
-                                    <strong> Mr. Jackson Someone </strong> <br>
-                                    <p class="mb-2"> myloginname@gmail.com  </p>
-                                    <a href="#" class="btn btn-light btn-sm">Edit</a>
+                                    <strong> Mr. Thinh </strong> <br>
+                                    <p class="mb-2"> longthinhx@icloud.com  </p>
+                                    <a href="#" class="btn btn-light btn-sm">Sửa</a>
                                 </div>
                             </figure>
                             <hr>
                             <p>
-                                <i class="fa fa-map-marker text-muted"></i> &nbsp; My address:
+                                <i class="fa fa-map-marker text-muted"></i> &nbsp; Địa chỉ:
                                 <br>
-                                Tashkent city, Street name, Building 123, House 321 &nbsp
-                                <a href="#" class="btn-link"> Edit</a>
+                                193/32 Suối Nho, Định Quán, Đồng Nai, VN. &nbsp
+                                <a href="#" class="btn btn-light btn-sm">Sửa</a>
                             </p>
 
 
@@ -88,25 +91,25 @@
                                 <figure class="card bg">
                                     <div class="p-3">
                                         <h4 class="title">38</h4>
-                                        <span>Orders</span>
+                                        <span>Đã mua</span>
                                     </div>
                                 </figure>
                                 <figure class="card bg">
                                     <div class="p-3">
                                         <h4 class="title">5</h4>
-                                        <span>Wishlists</span>
+                                        <span>Danh sách mơ ước</span>
                                     </div>
                                 </figure>
                                 <figure class="card bg">
                                     <div class="p-3">
                                         <h4 class="title">12</h4>
-                                        <span>Awaiting delivery</span>
+                                        <span>Chờ giao hàng</span>
                                     </div>
                                 </figure>
                                 <figure class="card bg">
                                     <div class="p-3">
                                         <h4 class="title">50</h4>
-                                        <span>Delivered items</span>
+                                        <span>Bom hàng</span>
                                     </div>
                                 </figure>
                             </article>
@@ -117,42 +120,27 @@
 
                     <article class="card  mb-3">
                         <div class="card-body">
-                            <h5 class="card-title mb-4">Recent orders </h5>
+                            <h5 class="card-title mb-4">Đã mua gần đây</h5>
 
                             <div class="row">
-                                <div class="col-md-6">
-                                    <figure class="itemside  mb-3">
-                                        <div class="aside"><img src="~/Content/images/items/1.jpg" class="border img-sm"></div>
-                                        <figcaption class="info">
-                                            <time class="text-muted"><i class="fa fa-calendar-alt"></i> 12.09.2019</time>
-                                            <p>Great book name goes here </p>
-                                            <span class="text-success">Order confirmed </span>
-                                        </figcaption>
-                                    </figure>
-                                </div> <!-- col.// -->
-                                <div class="col-md-6">
-                                    <figure class="itemside  mb-3">
-                                        <div class="aside"><img src="~/Content/images/items/2.jpg" class="border img-sm"></div>
-                                        <figcaption class="info">
-                                            <time class="text-muted"><i class="fa fa-calendar-alt"></i> 12.09.2019</time>
-                                            <p>How to be rich</p>
-                                            <span class="text-success">Departured</span>
-                                        </figcaption>
-                                    </figure>
-                                </div> <!-- col.// -->
-                                <div class="col-md-6">
-                                    <figure class="itemside mb-3">
-                                        <div class="aside"><img src="~/Content/images/items/3.jpg" class="border img-sm"></div>
-                                        <figcaption class="info">
-                                            <time class="text-muted"><i class="fa fa-calendar-alt"></i> 12.09.2019</time>
-                                            <p>Harry Potter book </p>
-                                            <span class="text-success">Shipped  </span>
-                                        </figcaption>
-                                    </figure>
-                                </div> <!-- col.// -->
-                            </div> <!-- row.// -->
+                                @foreach (var product in Model.ListProduct
+                            .Where(p => p.IsRecommended == true && p.Status == true)
+                            .Take(2))
+                                {
+                            <div class="col-md-6">
+                                <figure class="itemside  mb-3">
+                                    <div class="aside"><img src="~/Content/images/items/@product.ProductImage" class="border img-sm"></div>
+                                    <figcaption class="info">
+                                        <time class="text-muted"><i class="fa"></i>@product.Price đ</time>
+                                        <p>@product.FullDescription</p>
+                                        <span class="text-success">Giao hàng thành công</span>
+                                    </figcaption>
+                                </figure>
+                            </div> <!-- col.// --> }
 
-                            <a href="#" class="btn btn-outline-primary btn-block"> See all orders <i class="fa fa-chevron-down"></i>  </a>
+                                        </div> <!-- row.// -->
+                               
+                            
                         </div> <!-- card-body .// -->
                     </article> <!-- card.// -->
 

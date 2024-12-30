@@ -1,5 +1,4 @@
-﻿
-@model ChuyenDeASPNET.Models.HomeModel
+﻿@model ChuyenDeASPNET.Models.HomeModel
 
 @{
     var products = Model.ListProduct;
@@ -261,7 +260,7 @@
                         <ul class="row no-gutters bordered-cols">
                             @foreach (var item in Model.ListProduct
 .Where(p => p.CategoryID == 3)
-.Take(8))
+.Take(4))
                             {
                                 <li class="col-6 col-lg-3 col-md-4">
                                     <a href="#" class="item">
@@ -287,55 +286,54 @@
         <section class="padding-bottom">
 
             <header class="section-heading heading-line">
-                <h4 class="title-section text-uppercase">Request for Quotation</h4>
+                <h4 class="title-section text-uppercase">Gửi yêu cầu</h4>
             </header>
 
             <div class="row">
                 <div class="col-md-8">
                     <div class="card-banner banner-quote overlay-gradient" style="background-image: url('~/Content/images/banners/banner9.jpg');">
                         <div class="card-img-overlay white">
-                            <h3 class="card-title">An easy way to send request to suppliers</h3>
+                            <h3 class="card-title">Dành cho hệ thống phân phối chính hãng</h3>
                             <p class="card-text" style="max-width: 400px">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt.
+                                Kết nối ngay với chúng tôi để biết thêm thông tin
                             </p>
-                            <a href="" class="btn btn-primary rounded-pill">Learn more</a>
+                            <a href="" class="btn btn-primary rounded-pill">Tìm hiểu thêm</a>
                         </div>
                     </div>
                 </div> <!-- col // -->
                 <div class="col-md-4">
 
                     <div class="card card-body">
-                        <h4 class="title py-3">One Request, Multiple Quotes</h4>
+                        <h4 class="title py-3">Hệ thống ủy quyền</h4>
                         <form>
                             <div class="form-group">
-                                <input class="form-control" name="" placeholder="What are you looking for?" type="text">
+                                <input class="form-control" name="" placeholder="iPhone 14 Pro Max,..." type="text">
                             </div>
                             <div class="form-group">
                                 <div class="input-group">
-                                    <input class="form-control" placeholder="Quantity" name="" type="text">
+                                    <input class="form-control" placeholder="Số lượng" name="" type="text">
 
                                     <select class="custom-select form-control">
-                                        <option>Pieces</option>
-                                        <option>Litres</option>
-                                        <option>Tons</option>
-                                        <option>Gramms</option>
+                                        <option>iPhone</option>
+                                        <option>Laptop</option>
+                                        <option>Phụ kiện</option>
+                                        
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group text-muted">
-                                <p>Select template type:</p>
+                                <p>Chọn yêu cầu:</p>
                                 <label class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" value="option1">
-                                    <div class="form-check-label">Request price</div>
+                                    <div class="form-check-label">Nhanh</div>
                                 </label>
                                 <label class="form-check form-check-inline">
                                     <input class="form-check-input" type="checkbox" value="option2">
-                                    <div class="form-check-label">Request a sample</div>
+                                    <div class="form-check-label">Tiết kiệm</div>
                                 </label>
                             </div>
                             <div class="form-group">
-                                <button class="btn btn-warning">Request for quote</button>
+                                <button class="btn btn-warning">Xác nhận</button>
                             </div>
                         </form>
                     </div>
@@ -349,7 +347,7 @@
         <section class="padding-bottom">
 
             <header class="section-heading heading-line">
-                <h4 class="title-section text-uppercase">Trade services</h4>
+                <h4 class="title-section text-uppercase">Dịch vụ</h4>
             </header>
 
             <div class="row">
@@ -357,8 +355,8 @@
                     <article class="card card-post">
                         <img src="~/Content/images/posts/1.jpg" class="card-img-top">
                         <div class="card-body">
-                            <h6 class="title">Trade Assurance</h6>
-                            <p class="small text-uppercase text-muted">Order protection</p>
+                            <h6 class="title">Đảm bảo thương mại</h6>
+                            <p class="small text-uppercase text-muted">Bảo vệ hàng hóa</p>
                         </div>
                     </article> <!-- card.// -->
                 </div> <!-- col.// -->
@@ -366,8 +364,8 @@
                     <article class="card card-post">
                         <img src="~/Content/images/posts/2.jpg" class="card-img-top">
                         <div class="card-body">
-                            <h6 class="title">Pay anytime</h6>
-                            <p class="small text-uppercase text-muted">Finance solution</p>
+                            <h6 class="title">Thanh toán linh hoạt</h6>
+                            <p class="small text-uppercase text-muted">Giải pháp tài chính</p>
                         </div>
                     </article> <!-- card.// -->
                 </div> <!-- col.// -->
@@ -375,8 +373,8 @@
                     <article class="card card-post">
                         <img src="~/Content/images/posts/3.jpg" class="card-img-top">
                         <div class="card-body">
-                            <h6 class="title">Inspection solution</h6>
-                            <p class="small text-uppercase text-muted">Easy Inspection</p>
+                            <h6 class="title">Giải pháp kiểm tra</h6>
+                            <p class="small text-uppercase text-muted">Dễ dàng đồng kiểm</p>
                         </div>
                     </article> <!-- card.// -->
                 </div> <!-- col.// -->
@@ -384,8 +382,8 @@
                     <article class="card card-post">
                         <img src="~/Content/images/posts/4.jpg" class="card-img-top">
                         <div class="card-body">
-                            <h6 class="title">Ocean and Air Shipping</h6>
-                            <p class="small text-uppercase text-muted">Logistic services</p>
+                            <h6 class="title">Vận chuyển toàn cầu</h6>
+                            <p class="small text-uppercase text-muted">Dịch vụ hậu cần</p>
                         </div>
                     </article> <!-- card.// -->
                 </div> <!-- col.// -->
@@ -397,19 +395,19 @@
         <section class="padding-bottom">
 
             <header class="section-heading heading-line">
-                <h4 class="title-section text-uppercase">Choose region</h4>
+                <h4 class="title-section text-uppercase">Quốc gia</h4>
             </header>
 
             <ul class="row mt-4">
-                <li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="~/Content/images/icons/flags/CN.png"> <span>China</span> </a></li>
-                <li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="~/Content/images/icons/flags/DE.png"> <span>Germany</span> </a></li>
-                <li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="~/Content/images/icons/flags/AU.png"> <span>Australia</span> </a></li>
-                <li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="~/Content/images/icons/flags/RU.png"> <span>Russia</span> </a></li>
-                <li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="~/Content/images/icons/flags/IN.png"> <span>India</span> </a></li>
-                <li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="~/Content/images/icons/flags/GB.png"> <span>England</span> </a></li>
-                <li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="~/Content/images/icons/flags/TR.png"> <span>Turkey</span> </a></li>
+                <li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="~/Content/images/icons/flags/CN.png"> <span>Trung Quốc</span> </a></li>
+                <li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="~/Content/images/icons/flags/DE.png"> <span>Đức</span> </a></li>
+                <li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="~/Content/images/icons/flags/AU.png"> <span>Úc</span> </a></li>
+                <li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="~/Content/images/icons/flags/RU.png"> <span>Nga</span> </a></li>
+                <li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="~/Content/images/icons/flags/IN.png"> <span>Ấn Độ</span> </a></li>
+                <li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="~/Content/images/icons/flags/GB.png"> <span>Anh</span> </a></li>
+                <li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="~/Content/images/icons/flags/TR.png"> <span>Thổ Nhĩ Kỳ</span> </a></li>
                 <li class="col-md col-6"><a href="#" class="icontext"> <img class="icon-flag-sm" src="~/Content/images/icons/flags/UZ.png"> <span>Uzbekistan</span> </a></li>
-                <li class="col-md col-6"><a href="#" class="icontext"> <i class="mr-3 fa fa-ellipsis-h"></i> <span>More regions</span> </a></li>
+                
             </ul>
         </section>
         <!-- =============== SECTION REGION .//END =============== -->
@@ -423,19 +421,19 @@
     <section class="section-subscribe padding-y-lg">
         <div class="container">
 
-            <p class="pb-2 text-center text-white">Delivering the latest product trends and industry news straight to your inbox</p>
+            <p class="pb-2 text-center text-white">Gửi xu hướng sản phẩm mới nhất và tin tức ngành trực tiếp đến hộp thư đến của bạn</p>
 
             <div class="row justify-content-md-center">
                 <div class="col-lg-5 col-md-6">
                     <form class="form-row">
                         <div class="col-md-8 col-7">
-                            <input class="form-control border-0" placeholder="Your Email" type="email">
+                            <input class="form-control border-0" placeholder="Nhập email" type="email">
                         </div> <!-- col.// -->
                         <div class="col-md-4 col-5">
-                            <button type="submit" class="btn btn-block btn-warning"> <i class="fa fa-envelope"></i> Subscribe </button>
+                            <button type="submit" class="btn btn-block btn-warning"> <i class="fa fa-envelope"></i> Đăng ký</button>
                         </div> <!-- col.// -->
                     </form>
-                    <small class="form-text text-white-50">We’ll never share your email address with a third-party. </small>
+                    <small class="form-text text-white-50">Chúng tôi sẽ không bao giờ chia sẻ địa chỉ email của bạn với bên thứ ba.</small>
                 </div> <!-- col-md-6.// -->
             </div>
 
