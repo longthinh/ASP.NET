@@ -50,6 +50,7 @@ namespace ChuyenDeASPNET.Controllers
 
                 objASPNETEntities.OrderDetails.AddRange(lstOrderDetail);
                 objASPNETEntities.SaveChanges();
+                Session["cart"] = null; // Thêm dòng này để xóa giỏ hàng
             }
 
             return View();

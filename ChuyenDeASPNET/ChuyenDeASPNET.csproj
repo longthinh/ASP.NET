@@ -130,6 +130,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\BrandController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Context\Brand.cs">
@@ -2426,6 +2428,16 @@
     <Content Include="Content\images\images\items\24.webp" />
     <Content Include="Content\images\images\items\29.webp" />
     <Content Include="Content\images\images\posts\.DS_Store" />
+    <Content Include="Areas\Admin\Views\Brand\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Brand\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Brand\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Brand\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Brand\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

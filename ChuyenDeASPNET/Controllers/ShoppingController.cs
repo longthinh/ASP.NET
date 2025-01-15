@@ -60,8 +60,10 @@ namespace ChuyenDeASPNET.Controllers
             List<CartModel> li = (List<CartModel>)Session["cart"];
             li.RemoveAll(x => x.Product.ProductID == Id);
             Session["cart"] = li;
+            
             Session["count"] = Convert.ToInt32(Session["count"]) - 1;
             return Json(new { Message = "Thành công", JsonRequestBehavior.AllowGet });
+            
         }
 
     }

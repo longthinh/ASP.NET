@@ -110,14 +110,14 @@
                                 <a href="@Url.Action("Cart", "Shopping")" class="widget-view">
                                     <div class="icon-area">
                                         <i class="fa fa-shopping-cart"></i>
-                                        @if (Session["count"] != null && Convert.ToInt32(Session["count"]) > 0)
-                                        {
-                                            <span class="notify" id="CartCount">@Session["count"]</span>
-                                        }
+                                        @*<span class="notify" id="CartCount">
+                                            @(Session["count"] != null ? Session["count"] : "0")
+                                        </span>*@
                                     </div>
                                     <small class="text">Giỏ hàng</small>
                                 </a>
                             </div>
+
 
                         </div> <!-- widgets-wrap.// -->
                     </div> <!-- col.// -->
